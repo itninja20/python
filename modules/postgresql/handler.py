@@ -144,8 +144,8 @@ if __name__ == '__main__':
     # ])
 
     #delete
-    for i in range(1,6):
-        print(delete_entry(i))
+    # for i in range(1,7):
+    #     print(delete_entry(i))
 
 
     get_vendors()
