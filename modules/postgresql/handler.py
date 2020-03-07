@@ -59,7 +59,7 @@ def get_vendors():
     conn = None
     try:
         #params = config()
-        conn = psycopg2.connect(host="192.168.0.109",database="test_cmdb", user="jan", password="kee5daij")
+        conn = psycopg2.connect(host="-",database="-", user="-", password="-")
         cur = conn.cursor()
         cur.execute("SELECT vendor_id, vendor_name FROM vendors ORDER BY vendor_name")
         print("The number of parts: ", cur.rowcount)
