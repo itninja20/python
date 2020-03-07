@@ -3,34 +3,10 @@
 import psycopg2
 
 
-def test():
-    conn = None
-    try:
-        conn = psycopg2.connect(host="192.168.0.109",database="test_cmdb", user="jan", password="kee5daij")
-        cur = conn.cursor()
-        com =  create_table()
-        cur.execute('SELECT version()')
-        db_version = cur.fetchone()
-        print(db_version)
-        cur.close()
-    except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
-    finally:
-        if conn is not None:
-            conn.close()
-            print('Database connection closed.')
-
-def conn():
-    c = psycopg2.connect(host="192.168.0.109",database="test_cmdb", user="jan", password="kee5daij")
-    return c
-
-def cur(conn):
-    return conn.cursor()
-
 def run_statement(sql):
     conn = None
     try:
-        conn = psycopg2.connect(host="192.168.0.109",database="test_cmdb", user="jan", password="kee5daij")
+        conn = psycopg2.connect(host="-",database="-", user="-", password="-")
         cur = conn.cursor()
         cur.execute(sql)
         conn.commit()
@@ -42,11 +18,6 @@ def run_statement(sql):
             conn.close()
             print('Database connection closed.')
 
-def commit(conn):
-    conn.commit()
-
-def close_conn(conn):
-    conn.close()
 
 def vendors_table():
     command = (
@@ -68,7 +39,7 @@ def insert_vendor_list(vendor_list):
     sql = "INSERT INTO vendors(vendor_name) VALUES(%s)"
     conn = None
     try:
-        conn = psycopg2.connect(host="192.168.0.109",database="test_cmdb", user="jan", password="kee5daij")
+        conn = psycopg2.connect(host="-",database="-", user="-", password="-")
         # create a new cursor
         cur = conn.cursor()
         # execute the INSERT statement

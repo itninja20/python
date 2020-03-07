@@ -14,7 +14,3 @@ def commander(client, command):
 def close_conn(client):
     client.close()
 
-# con = client('192.168.0.109',22,'jan','kee5daij')
-# out = commander(con, 'whoami')
-# print(out)
-# close_conn(con)

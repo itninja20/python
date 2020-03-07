@@ -99,7 +99,7 @@ def ssh_check(host,q):
         #pass
         print('[ '+host+' ]'+'> port 22 is CLOSED')
     for h in ok:
-        p = client(h, 22, 'jan', 'kee5daij')
+        p = client(h, 22, 'usr', 'pwd')
         stdout = commander(p, 'whoami')
         close_conn(p)
         q.put(h +' '+ stdout.decode() + '> OK')
