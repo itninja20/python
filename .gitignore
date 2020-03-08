@@ -1,0 +1,6 @@
+
+*.ini
+*.csv
+*.conf
+*.pyc
+modules/ip/__pycache__/
